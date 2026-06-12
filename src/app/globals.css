@@ -22,11 +22,9 @@
   --color-line: #ece6e7;
   --color-cloud: #faf7f7;
 
-  /* Fonts (wired from next/font in layout.tsx) */
-  --font-sans: var(--font-thai), var(--font-display), ui-sans-serif, system-ui,
-    sans-serif;
-  --font-display: var(--font-display), var(--font-thai), ui-sans-serif,
-    sans-serif;
+  /* Fonts — Noto Sans Thai everywhere (Thai + Latin), wired in layout.tsx */
+  --font-sans: var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-noto), ui-sans-serif, system-ui, sans-serif;
 
   /* Easing & shadows */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);

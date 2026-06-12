@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, IBM_Plex_Sans_Thai } from "next/font/google";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import Script from "next/script";
@@ -9,17 +9,10 @@ import { FloatingActions } from "@/components/layout/FloatingActions";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-const display = Montserrat({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const thai = IBM_Plex_Sans_Thai({
+const noto = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-thai",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-noto",
   display: "swap",
 });
 
@@ -75,7 +68,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="th" className={`${display.variable} ${thai.variable}`}>
+    <html lang="th" className={noto.variable}>
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
