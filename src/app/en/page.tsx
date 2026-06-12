@@ -82,12 +82,12 @@ export default function EnPage() {
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white to-cloud shadow-2xl">
               <Image
-                src="/images/hero-car.jpg"
+                src="/images/hero-road.jpg"
                 alt="HONG MOVE electric airport limousine"
                 fill
                 priority
                 sizes="(max-width:1024px) 100vw, 50vw"
-                className="object-contain p-2"
+                className="object-cover"
               />
             </div>
           </div>

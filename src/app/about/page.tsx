@@ -29,7 +29,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
               <Image
-                src="/images/fleet-night.jpg"
+                src="/images/taxi-trails.jpg"
                 alt="ฝูงรถ HONG MOVE"
                 fill
                 sizes="(max-width:1024px) 100vw, 50vw"

@@ -11,7 +11,7 @@ const posts = [
     title: "HONG MOVE ขยายฝูงรถ EV เพิ่ม 50 คัน รองรับผู้โดยสารสนามบิน",
     category: "ข่าวบริษัท",
     date: "12 มิ.ย. 2569",
-    image: "/images/station-photo.jpg",
+    image: "/images/scenic-pier.jpg",
   },
   {
     slug: "ev-charging-aot",

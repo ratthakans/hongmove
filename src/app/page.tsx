@@ -5,6 +5,7 @@ import { Services } from "@/components/sections/Services";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { AirportNetwork } from "@/components/sections/AirportNetwork";
 import { BusinessVision } from "@/components/sections/BusinessVision";
+import { TourPackages } from "@/components/sections/TourPackages";
 import { Reviews } from "@/components/sections/Reviews";
 import { AppTeaser } from "@/components/sections/AppTeaser";
 import { NewsTeaser } from "@/components/sections/NewsTeaser";
@@ -17,6 +18,7 @@ export default function Home() {
       <TrustBar />
       <Services />
       <WhyUs />
+      <TourPackages />
       <AirportNetwork />
       <BusinessVision />
       <Reviews />

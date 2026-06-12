@@ -93,25 +93,25 @@ export const services = [
     slug: "taxi-vip",
     title: "Taxi VIP",
     desc: "รถแท็กซี่ไฟฟ้าระดับ VIP รับส่งสนามบิน สะดวก ปลอดภัย ราคาเป็นธรรม",
-    image: "/images/station-photo.jpg",
+    image: "/images/taxi-trails.jpg",
   },
   {
     slug: "limousine",
     title: "Limousine",
     desc: "บริการลีมูซีนพรีเมียม สำหรับการเดินทางที่หรูหราและเป็นส่วนตัว",
-    image: "/images/car-sedan.jpg",
+    image: "/images/limo-sunset.jpg",
   },
   {
     slug: "rental",
     title: "เช่ารถ EV",
     desc: "เช่ารถยนต์ไฟฟ้ารายวัน/รายเดือน พร้อมคนขับมืออาชีพ",
-    image: "/images/car-suv.jpg",
+    image: "/images/fleet-airport.jpg",
   },
   {
     slug: "travel",
     title: "Hong Travel",
     desc: "แพ็กเกจท่องเที่ยวเชื่อมต่ออ่าวไทย–อันดามัน เกาะหลีเป๊ะ และจุดหมายเด่นภาคใต้",
-    image: "/images/fleet-night.jpg",
+    image: "/images/tour-phangnga.jpg",
   },
 ] as const;
 
