@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   HONG MOVE — Brand Design System
+   ตาม Brand Guideline (HONG_MOVE_002.pdf)
+   ============================================================ */
+
+@theme {
+  /* Brand colors */
+  --color-crimson: #6b0000; /* Velvet Crimson — primary 40% */
+  --color-crimson-700: #560000;
+  --color-crimson-900: #3a0000;
+  --color-garnet: #8d1b11; /* Deep Garnet — secondary 20% */
+  --color-garnet-400: #b03325;
+  --color-cream: #ffd54f; /* Cream Yellow — accent 10% */
+  --color-cream-300: #ffe08a;
+  --color-cream-600: #e6b62f;
+
+  /* Neutrals */
+  --color-ink: #1a1115;
+  --color-muted: #6b5d62;
+  --color-line: #ece6e7;
+  --color-cloud: #faf7f7;
+
+  /* Fonts (wired from next/font in layout.tsx) */
+  --font-sans: var(--font-thai), var(--font-display), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display: var(--font-display), var(--font-thai), ui-sans-serif,
+    sans-serif;
+
+  /* Easing & shadows */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-card: 0 18px 50px -28px rgba(58, 0, 0, 0.35);
+  --shadow-soft: 0 8px 30px -18px rgba(26, 17, 21, 0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-crimson);
+    color: #fff;
+  }
+  /* Keyboard focus ring (accessibility) */
+  :focus-visible {
+    outline: 2px solid var(--color-crimson);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .container-x {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x { padding-inline: 2rem; }
+  }
+  .text-gradient-crimson {
+    background: linear-gradient(120deg, #8d1b11, #6b0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-crimson-radial {
+    background:
+      radial-gradient(120% 120% at 80% -10%, #8d1b11 0%, transparent 55%),
+      radial-gradient(100% 120% at 0% 0%, #3a0000 0%, transparent 50%),
+      #6b0000;
+  }
+}
+
+/* Reveal-on-scroll (IntersectionObserver toggles .is-visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out-soft),
+    transform 0.6s var(--ease-out-soft);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* On-load entrance (above-the-fold hero) */
+@keyframes hm-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-in {
+  animation: hm-fade-up 0.7s var(--ease-out-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-in { animation: none; }
+  html { scroll-behavior: auto; }
 }
