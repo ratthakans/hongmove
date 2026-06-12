@@ -76,7 +76,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/55 md:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.legalName} — สงวนลิขสิทธิ์
+            © {new Date().getFullYear()} {site.legalName} · จดทะเบียน พ.ศ. 2567 — สงวนลิขสิทธิ์
           </p>
           <p>{site.tagline}</p>
         </div>

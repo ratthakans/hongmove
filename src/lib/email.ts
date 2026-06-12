@@ -6,12 +6,13 @@ import "server-only";
  * ถ้ายังไม่ตั้งค่า key จะ log ไว้และถือว่า "รับเรื่องแล้ว" (flow ไม่สะดุดตอน dev)
  */
 
-export type LeadType = "booking" | "contact" | "application";
+export type LeadType = "booking" | "contact" | "application" | "investor";
 
 const LABELS: Record<LeadType, string> = {
   booking: "คำขอจองรถ",
   contact: "ข้อความติดต่อ",
   application: "ใบสมัครงาน",
+  investor: "คำขอเอกสารนักลงทุน",
 };
 
 const FIELD_LABELS: Record<string, string> = {
@@ -26,6 +27,7 @@ const FIELD_LABELS: Record<string, string> = {
   email: "อีเมล",
   topic: "เรื่อง",
   role: "ตำแหน่ง",
+  company: "บริษัท/องค์กร",
   message: "ข้อความ",
   note: "หมายเหตุ",
 };

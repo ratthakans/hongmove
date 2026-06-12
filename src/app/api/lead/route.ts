@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendLead, type LeadType } from "@/lib/email";
 
-const TYPES: LeadType[] = ["booking", "contact", "application"];
+const TYPES: LeadType[] = ["booking", "contact", "application", "investor"];
 
 export async function POST(req: Request) {
   let body: Record<string, string> & { type?: string };

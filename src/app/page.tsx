@@ -6,7 +6,7 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { AirportNetwork } from "@/components/sections/AirportNetwork";
 import { BusinessVision } from "@/components/sections/BusinessVision";
 import { TourPackages } from "@/components/sections/TourPackages";
-import { Reviews } from "@/components/sections/Reviews";
+import { Credibility } from "@/components/sections/Credibility";
 import { AppTeaser } from "@/components/sections/AppTeaser";
 import { NewsTeaser } from "@/components/sections/NewsTeaser";
 import { CTASection } from "@/components/sections/CTASection";
@@ -21,7 +21,7 @@ export default function Home() {
       <TourPackages />
       <AirportNetwork />
       <BusinessVision />
-      <Reviews />
+      <Credibility />
       <Partners />
       <AppTeaser />
       <NewsTeaser />

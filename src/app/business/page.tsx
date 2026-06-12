@@ -5,7 +5,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AirportNetwork } from "@/components/sections/AirportNetwork";
 import { CTASection } from "@/components/sections/CTASection";
-import { businessPillars } from "@/lib/site";
 import { Bolt, Pin, Leaf, Plane } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
