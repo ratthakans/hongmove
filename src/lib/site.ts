@@ -27,25 +27,37 @@ export const site = {
   },
 } as const;
 
-/** รีวิวลูกค้า (placeholder — ทีมงานปรับ/ดึงจาก Google Reviews ภายหลัง) */
-export const reviews = [
+/** หลักฐานความน่าเชื่อถือ — ใช้ข้อเท็จจริงที่ตรวจสอบได้จริง (ไม่ใช่รีวิวแต่ง) */
+export const credentials = [
   {
-    name: "คุณธนกร",
-    role: "ผู้โดยสารสนามบินหาดใหญ่",
-    rating: 5,
-    text: "รถสะอาด คนขับสุภาพ ตรงเวลา ราคาบอกชัดเจนไม่บวกเพิ่ม ประทับใจมากครับ",
+    icon: "plane",
+    title: "สัมปทาน ทอท. รายแรก",
+    desc: "ผู้ให้บริการรับส่งผู้โดยสารรายแรกที่ได้รับอนุญาตจากท่าอากาศยานไทย ณ ท่าอากาศยานหาดใหญ่",
   },
   {
-    name: "K. Sarah",
-    role: "Tourist — Lipe Island",
-    rating: 5,
-    text: "Booked an airport transfer to the pier. Clean EV car, professional driver, smooth ride. Highly recommend!",
+    icon: "shield",
+    title: "จดทะเบียนถูกต้องตามกฎหมาย",
+    desc: "บริษัท หงส์ มูฟ จำกัด จดทะเบียนจัดตั้งเมื่อ พ.ศ. 2567 ดำเนินกิจการภายใต้กฎหมายไทย",
   },
   {
-    name: "คุณวิภาดา",
-    role: "เดินทางเป็นครอบครัว",
-    rating: 5,
-    text: "จองผ่าน LINE ง่ายมาก รถ MPV กว้าง นั่งสบายทั้งครอบครัว ปลอดภัยตลอดทาง",
+    icon: "car",
+    title: "คนขับมืออาชีพ มีใบอนุญาต",
+    desc: "ผ่านการอบรม มีใบอนุญาตขับขี่สาธารณะ ตามมาตรฐานกรมการขนส่งทางบก",
+  },
+  {
+    icon: "shield",
+    title: "ประกันภัยทุกการเดินทาง",
+    desc: "คุ้มครองผู้โดยสารทุกเที่ยว เพื่อความอุ่นใจตลอดเส้นทาง",
+  },
+  {
+    icon: "leaf",
+    title: "ยานยนต์ไฟฟ้า 100%",
+    desc: "ฝูงรถ EV รุ่นใหม่ ปลอดภัย สะอาด ไร้มลภาวะ",
+  },
+  {
+    icon: "sparkle",
+    title: "ราคาโปร่งใส",
+    desc: "แจ้งราคาชัดเจนก่อนเดินทาง ไม่มีค่าใช้จ่ายแอบแฝง",
   },
 ];
 
@@ -62,6 +74,7 @@ export const nav = [
   { label: "เกี่ยวกับเรา", href: "/about" },
   { label: "บริการ", href: "/services" },
   { label: "ธุรกิจ", href: "/business" },
+  { label: "นักลงทุน", href: "/investor" },
   { label: "ร่วมงานกับเรา", href: "/careers" },
   { label: "บทความ", href: "/news" },
   { label: "แกลเลอรี", href: "/gallery" },

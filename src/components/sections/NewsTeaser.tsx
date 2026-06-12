@@ -7,25 +7,25 @@ import { ArrowRight } from "@/components/ui/Icons";
 /** Placeholder — จะดึงจาก Sanity CMS ในเฟส 3 */
 const posts = [
   {
-    slug: "expand-ev-fleet",
-    title: "HONG MOVE ขยายฝูงรถ EV เพิ่ม 50 คัน รองรับผู้โดยสารสนามบิน",
+    slug: "official-launch-hatyai",
+    title: "หงส์ มูฟ เปิดให้บริการอย่างเป็นทางการ ณ ท่าอากาศยานหาดใหญ่",
     category: "ข่าวบริษัท",
-    date: "12 มิ.ย. 2569",
+    date: "17 ต.ค. 2568",
     image: "/images/scenic-pier.jpg",
   },
   {
     slug: "ev-charging-aot",
-    title: "เปิดสถานีอัดประจุไฟฟ้าภายในท่าอากาศยานหาดใหญ่",
+    title: "ได้รับอนุญาตจาก ทอท. ดำเนินโครงการสถานีอัดประจุไฟฟ้า",
     category: "พลังงานสะอาด",
-    date: "28 พ.ค. 2569",
-    image: "/images/counter-staff.jpg",
+    date: "พ.ศ. 2568",
+    image: "/images/charging.jpg",
   },
   {
-    slug: "hong-travel-andaman",
-    title: "Hong Travel เปิดเส้นทางใหม่ เชื่อมอ่าวไทย–อันดามัน สู่เกาะหลีเป๊ะ",
-    category: "ท่องเที่ยว",
-    date: "15 พ.ค. 2569",
-    image: "/images/car-sedan.jpg",
+    slug: "mixed-use-ptt-mall",
+    title: "เดินหน้าโครงการ Mixed-Use ร่วมกับสถานี PTT และ Community Mall",
+    category: "ข่าวบริษัท",
+    date: "ปลายปี 2568",
+    image: "/images/tour-resort.jpg",
   },
 ];
 

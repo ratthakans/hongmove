@@ -69,6 +69,29 @@ export const Close = (p: P) => (
     <path d="M6 6l12 12M18 6L6 18" />
   </svg>
 );
+export const Car = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11M5 11h14M5 11a2 2 0 00-2 2v3h2m14-5a2 2 0 012 2v3h-2M6 16h12M6 16v1.5M18 16v1.5" />
+    <circle cx="7.5" cy="16" r="1.2" />
+    <circle cx="16.5" cy="16" r="1.2" />
+  </svg>
+);
+export const Fuel = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M5 21V6a2 2 0 012-2h6a2 2 0 012 2v15M3 21h14M5 11h10" />
+    <path d="M15 9l3 3v5a2 2 0 002 2 2 2 0 002-2v-7l-3-3" />
+  </svg>
+);
+export const Building = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M4 21V5a1 1 0 011-1h9a1 1 0 011 1v16M15 21V9h4a1 1 0 011 1v11M3 21h18M7.5 8h2M7.5 12h2M7.5 16h2" />
+  </svg>
+);
+export const Download = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 3v12M7 11l5 4 5-4M5 21h14" />
+  </svg>
+);
 export const Star = (p: P) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
     <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z" />

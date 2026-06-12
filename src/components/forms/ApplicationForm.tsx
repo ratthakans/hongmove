@@ -70,17 +70,13 @@ export function ApplicationForm({ defaultRole }: { defaultRole?: string }) {
           className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none focus:border-crimson"
         />
       </div>
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink/80">
-          แนบเรซูเม่ (PDF/รูปภาพ)
-        </label>
-        <input
-          type="file"
-          name="resume"
-          accept=".pdf,.png,.jpg,.jpeg"
-          className="w-full rounded-xl border border-dashed border-line bg-cloud px-4 py-3 text-sm text-muted file:mr-3 file:rounded-full file:border-0 file:bg-crimson file:px-4 file:py-1.5 file:text-xs file:font-semibold file:text-white"
-        />
-      </div>
+      <p className="rounded-xl border border-dashed border-line bg-cloud px-4 py-3 text-sm text-muted">
+        📄 แนบเรซูเม่: ส่งไฟล์ของคุณมาที่{" "}
+        <a href="mailto:info@hongmove.co.th?subject=สมัครงาน — แนบเรซูเม่" className="font-semibold text-crimson underline">
+          info@hongmove.co.th
+        </a>{" "}
+        หรือทีมงานจะติดต่อขอเพิ่มเติมหลังได้รับใบสมัคร
+      </p>
       {status === "error" && (
         <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
           ส่งไม่สำเร็จ กรุณาลองใหม่ หรือติดต่อเราทาง LINE / โทรศัพท์

@@ -20,8 +20,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
-
   // home page has a crimson hero → transparent header until scroll.
   // inner pages → solid header from the start for guaranteed readability.
   const solid = scrolled || pathname !== "/";
@@ -49,7 +47,7 @@ export function Header() {
         </Link>
 
         {/* desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 xl:gap-6 lg:flex">
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -115,6 +113,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => setOpen(false)}
               className="border-b border-white/10 py-4 text-2xl font-semibold text-white"
               style={{ transitionDelay: `${i * 40}ms` }}
             >
@@ -123,12 +122,14 @@ export function Header() {
           ))}
           <Link
             href="/booking"
+            onClick={() => setOpen(false)}
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-cream px-6 py-4 text-base font-semibold text-crimson-900"
           >
             จองรถเลย <ArrowRight className="h-5 w-5" />
           </Link>
           <Link
             href={isEn ? "/" : "/en"}
+            onClick={() => setOpen(false)}
             className="mt-3 text-center text-sm font-semibold text-white/80"
           >
             {isEn ? "ดูภาษาไทย" : "View in English (EN)"}
