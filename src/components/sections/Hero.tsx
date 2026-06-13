@@ -20,15 +20,15 @@ export function Hero() {
         sizes="100vw"
         className="object-cover object-[58%_center]"
       />
-      {/* brand gradient overlays for legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-crimson-900/95 via-crimson-900/55 to-crimson-900/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-crimson-900/85 via-transparent to-crimson-900/20" />
+      {/* subtle neutral scrim — keep image colors true, just enough for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:hidden" />
 
       <div className="container-x relative w-full py-32">
         <div className="max-w-xl">
-          <div className="animate-in inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur">
+          <div className="animate-in inline-flex items-center gap-2 rounded-full border border-white/40 bg-black/30 px-4 py-1.5 text-xs font-medium text-white backdrop-blur">
             <Plane className="h-4 w-4" />
-            ผู้ให้บริการรับส่งสนามบินรายแรกที่ได้รับอนุญาตจาก ทอท.
+            ผู้พัฒนาต่อยอดสัมปทาน ทอท. รายแรก — จาก Mobility สู่ Mixed-Use
           </div>
 
           <h1

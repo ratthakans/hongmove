@@ -4,9 +4,10 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
+import { Button } from "@/components/ui/Button";
 import { services } from "@/lib/site";
-import { fleet, rateTable } from "@/lib/data";
-import { Sparkle, Shield, Leaf, Bolt } from "@/components/ui/Icons";
+import { fleet } from "@/lib/data";
+import { Sparkle, Shield, Leaf, Bolt, ArrowRight } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
   title: "บริการของเรา",
@@ -45,6 +46,9 @@ export default function ServicesPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-crimson-900/60 to-transparent" />
+                  <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold text-crimson">
+                    {s.badge}
+                  </span>
                   <h3 className="absolute bottom-3 left-4 text-xl font-bold text-white">{s.title}</h3>
                 </div>
                 <p className="p-5 text-sm leading-relaxed text-muted">{s.desc}</p>
@@ -108,41 +112,25 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* rate table */}
+      {/* rates link */}
       <section className="bg-cloud py-16 md:py-20">
         <div className="container-x">
-          <SectionHeading
-            eyebrow="อัตราค่าบริการ"
-            title="เปรียบเทียบราคา Taxi VIP และ Limousine"
-            desc="ราคาตัวอย่างต่อเที่ยว (บาท) อาจปรับตามระยะทางและช่วงเวลาจริง — สอบถามเพิ่มเติมได้ที่ทีมงาน"
-          />
           <Reveal>
-            <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-white shadow-soft">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left text-sm">
-                  <thead>
-                    <tr className="bg-crimson text-white">
-                      <th className="px-5 py-4 font-semibold">เส้นทาง</th>
-                      <th className="px-5 py-4 font-semibold">ระยะทาง</th>
-                      <th className="px-5 py-4 text-right font-semibold">Taxi VIP</th>
-                      <th className="px-5 py-4 text-right font-semibold">Limousine</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rateTable.map((r, i) => (
-                      <tr
-                        key={r.route}
-                        className={i % 2 ? "bg-cloud/40" : "bg-white"}
-                      >
-                        <td className="px-5 py-4 font-medium text-ink/85">{r.route}</td>
-                        <td className="px-5 py-4 text-muted">{r.km}</td>
-                        <td className="px-5 py-4 text-right font-semibold text-crimson">฿{r.taxi}</td>
-                        <td className="px-5 py-4 text-right font-semibold text-garnet">฿{r.limo}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-crimson-radial p-8 text-white md:flex-row md:items-center md:p-12">
+              <div className="max-w-xl">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                  อัตราค่าบริการ
+                </span>
+                <h2 className="mt-2 text-2xl font-bold md:text-3xl">
+                  ดูราคา Taxi VIP และ Limousine แบบละเอียด
+                </h2>
+                <p className="mt-3 text-white/80">
+                  Taxi VIP คิดตามมิเตอร์ เริ่มต้น 150 บาท · Limousine เหมาตามปลายทาง — ดูตารางราคาเต็มได้ที่นี่
+                </p>
               </div>
+              <Button href="/rates" variant="cream" className="shrink-0 px-7 py-3.5 text-base">
+                ดูอัตราค่าบริการ <ArrowRight className="h-4 w-4" />
+              </Button>
             </div>
           </Reveal>
         </div>

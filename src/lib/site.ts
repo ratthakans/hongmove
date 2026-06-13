@@ -12,7 +12,7 @@ export const site = {
   tagline: "Beyond rides, a premium travel ecosystem.",
   taglineTh: "เหนือกว่าการขนส่ง คือการสร้างคุณค่า และขับเคลื่อนวัฒนธรรมท้องถิ่น",
   description:
-    "บริการ Taxi VIP และ Limousine ด้วยยานยนต์ไฟฟ้า 100% ผู้ให้บริการรับส่งสนามบินรายแรกที่ได้รับอนุญาตจาก ทอท. ณ ท่าอากาศยานหาดใหญ่",
+    "บริการ Taxi VIP และ Limousine ด้วยยานยนต์ไฟฟ้า 100% ผู้พัฒนาต่อยอดสัมปทาน ทอท. รายแรก ณ ท่าอากาศยานหาดใหญ่ — จาก Mobility สู่ Mixed-Use",
   contact: {
     address: "106/5 หมู่ที่ 1 ตำบลทุ่งตำเสา อำเภอหาดใหญ่ จังหวัดสงขลา 90110",
     email: "info@hongmove.co.th",
@@ -33,8 +33,8 @@ export const site = {
 export const credentials = [
   {
     icon: "plane",
-    title: "สัมปทาน ทอท. รายแรก",
-    desc: "ผู้ให้บริการรับส่งผู้โดยสารรายแรกที่ได้รับอนุญาตจากท่าอากาศยานไทย ณ ท่าอากาศยานหาดใหญ่",
+    title: "ผู้พัฒนาต่อยอดสัมปทาน ทอท. รายแรก",
+    desc: "ไม่ใช่รายแรกที่ได้สัมปทาน แต่เป็นรายแรกที่พัฒนาต่อยอดสัมปทาน ทอท. จาก Mobility สู่ Community Mall, Mixed-Use และอสังหาริมทรัพย์",
   },
   {
     icon: "shield",
@@ -65,7 +65,7 @@ export const credentials = [
 
 /** จุดสร้างความเชื่อมั่น (Trust bar) */
 export const trustPoints = [
-  "ได้รับอนุญาตจาก ทอท. รายแรก",
+  "ผู้พัฒนาต่อยอดสัมปทาน ทอท. รายแรก",
   "คนขับมืออาชีพ มีใบอนุญาต",
   "ประกันภัยทุกการเดินทาง",
   "ยานยนต์ไฟฟ้า 100%",
@@ -106,38 +106,41 @@ export const services = [
     title: "Taxi VIP",
     desc: "รถแท็กซี่ไฟฟ้าระดับ VIP รับส่งสนามบิน สะดวก ปลอดภัย ราคาเป็นธรรม",
     image: "/images/taxi-trails.jpg",
+    badge: "เปิดให้บริการแล้ว",
   },
   {
     slug: "limousine",
     title: "Limousine",
-    desc: "บริการลีมูซีนพรีเมียม สำหรับการเดินทางที่หรูหราและเป็นส่วนตัว",
-    image: "/images/limo-sunset.jpg",
+    desc: "บริการลีมูซีนพรีเมียม Deepal S05 สำหรับการเดินทางที่หรูหราและเป็นส่วนตัว",
+    image: "/images/deepal-silver.jpg",
+    badge: "เริ่มให้บริการ 1 ส.ค. 2569",
   },
   {
     slug: "rental",
     title: "เช่ารถ EV",
-    desc: "เช่ารถยนต์ไฟฟ้ารายวัน/รายเดือน พร้อมคนขับมืออาชีพ",
-    image: "/images/fleet-airport.jpg",
+    desc: "เช่ารถยนต์ไฟฟ้า Deepal S05 รายวัน/รายเดือน พร้อมคนขับมืออาชีพ",
+    image: "/images/biz-mobility.jpg",
+    badge: "Next Project",
   },
 ] as const;
 
-/** เครือข่ายสนามบินตามแผนขยาย (AOT p5) */
+/** เครือข่ายจุดให้บริการขนส่งมวลชนตามแผนขยาย */
 export const airports = [
-  { name: "หาดใหญ่", cars: "30 → 300", status: "เปิดให้บริการแล้ว", live: true },
-  { name: "เชียงใหม่", cars: "250", status: "แผนขยาย", live: false },
-  { name: "ดอนเมือง", cars: "150", status: "แผนขยาย", live: false },
-  { name: "เชียงราย", cars: "50", status: "แผนขยาย", live: false },
-  { name: "กระบี่", cars: "50", status: "แผนขยาย", live: false },
-  { name: "ขอนแก่น", cars: "50", status: "แผนขยาย", live: false },
-  { name: "อุดร–อุบล", cars: "150", status: "แผนขยาย", live: false },
-  { name: "นครศรีฯ", cars: "50", status: "แผนขยาย", live: false },
+  { label: "ท่าอากาศยานหาดใหญ่", cars: "30 → 300", status: "เปิดให้บริการแล้ว", live: true },
+  { label: "ท่าอากาศยานเชียงใหม่", cars: "250", status: "แผนขยาย", live: false },
+  { label: "ขนส่งมวลชนกรุงเทพ", cars: "150", status: "แผนขยาย", live: false },
+  { label: "ท่าอากาศยานเชียงราย", cars: "50", status: "แผนขยาย", live: false },
+  { label: "ท่าอากาศยานกระบี่", cars: "50", status: "แผนขยาย", live: false },
+  { label: "ท่าอากาศยานขอนแก่น", cars: "50", status: "แผนขยาย", live: false },
+  { label: "ท่าอากาศยานอุดร–อุบล", cars: "150", status: "แผนขยาย", live: false },
+  { label: "ท่าอากาศยานภูเก็ต", cars: "250", status: "แผนขยาย", live: false },
 ] as const;
 
 /** ส่วนธุรกิจ — นำเสนอระดับวิสัยทัศน์เท่านั้น (ไม่มีตัวเลขลับ) */
 export const businessPillars = [
   {
-    title: "สัมปทาน AOT",
-    desc: "ผู้ให้บริการรับส่งผู้โดยสารรายแรกที่ได้รับอนุญาตจากท่าอากาศยานไทย ณ สนามบินหาดใหญ่",
+    title: "ต่อยอดสัมปทาน AOT",
+    desc: "ผู้พัฒนาต่อยอดสัมปทาน ทอท. รายแรก ณ ท่าอากาศยานหาดใหญ่ — จาก Mobility สู่ Mixed-Use",
   },
   {
     title: "EV Charging Station",
@@ -148,8 +151,8 @@ export const businessPillars = [
     desc: "ศูนย์รวมพลังงาน การเดินทาง และไลฟ์สไตล์ ควบคู่สถานีบริการน้ำมัน PTT",
   },
   {
-    title: "เครือข่ายสนามบินทั่วประเทศ",
-    desc: "ตั้งเป้าขยายบริการครอบคลุมสนามบินหลัก ขับเคลื่อนสู่ ‘เมืองสีเขียว’ และ ‘สนามบินสีเขียว’",
+    title: "เครือข่ายขนส่งมวลชนทั่วประเทศ",
+    desc: "ตั้งเป้าขยายบริการครอบคลุมจุดให้บริการหลัก ขับเคลื่อนสู่ ‘เมืองสีเขียว’ และการขนส่งสีเขียว",
   },
 ] as const;
 

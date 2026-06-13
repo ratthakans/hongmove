@@ -31,6 +31,9 @@ export function Services() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-crimson-900/60 to-transparent" />
+                  <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold text-crimson">
+                    {s.badge}
+                  </span>
                   <h3 className="absolute bottom-3 left-4 text-xl font-bold text-white">
                     {s.title}
                   </h3>

@@ -19,14 +19,14 @@ export function AirportNetwork() {
       <div className="container-x relative">
         <SectionHeading
           eyebrow="เครือข่ายของเรา"
-          title="ขยายสู่สนามบินหลักทั่วประเทศ"
-          desc="เริ่มต้นที่ท่าอากาศยานหาดใหญ่ พร้อมแผนขยายเครือข่ายบริการครอบคลุมสนามบินยุทธศาสตร์ทั่วไทย"
+          title="ขยายสู่เครือข่ายขนส่งมวลชนทั่วประเทศ"
+          desc="เริ่มต้นที่ท่าอากาศยานหาดใหญ่ พร้อมแผนขยายเครือข่ายบริการครอบคลุมจุดยุทธศาสตร์ทั่วไทย"
           light
         />
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {airports.map((a, i) => (
-            <Reveal key={a.name} delay={i * 0.05}>
+            <Reveal key={a.label} delay={i * 0.05}>
               <div
                 className={`relative h-full rounded-2xl border p-5 backdrop-blur transition-colors ${
                   a.live
@@ -42,8 +42,8 @@ export function AirportNetwork() {
                     </span>
                   )}
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-white">
-                  สนามบิน{a.name}
+                <h3 className="mt-4 text-base font-bold leading-snug text-white">
+                  {a.label}
                 </h3>
                 <div className="mt-1 text-2xl font-extrabold text-white">
                   {a.cars}

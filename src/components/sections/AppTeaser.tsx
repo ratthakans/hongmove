@@ -42,7 +42,7 @@ export function AppTeaser() {
             <Reveal className="relative mx-auto w-full max-w-xs">
               <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/app-mascot.jpg"
+                  src="/images/app-mockup.jpg"
                   alt="แอป HONG — แอปเรียกรถของคนไทย"
                   fill
                   sizes="320px"
