@@ -18,7 +18,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[58%_center]"
+        className="animate-kenburns object-cover object-[58%_center]"
       />
       {/* subtle neutral scrim — keep image colors true, just enough for text legibility */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />

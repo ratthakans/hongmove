@@ -106,6 +106,15 @@
   animation: hm-fade-up 0.7s var(--ease-out-soft) both;
 }
 
+/* Hero Ken Burns — slow, subtle zoom */
+@keyframes hm-kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
+}
+.animate-kenburns {
+  animation: hm-kenburns 24s ease-out both;
+}
+
 /* Marquee (dynamic partner strip) */
 @keyframes hm-marquee {
   from { transform: translateX(0); }
@@ -123,5 +132,6 @@
   .reveal { opacity: 1; transform: none; transition: none; }
   .animate-in { animation: none; }
   .animate-marquee { animation: none; }
+  .animate-kenburns { animation: none; }
   html { scroll-behavior: auto; }
 }
