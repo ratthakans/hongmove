@@ -5,7 +5,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ApplicationForm } from "@/components/forms/ApplicationForm";
 import { jobs } from "@/lib/data";
-import { site } from "@/lib/site";
 import { ArrowRight, Pin, Sparkle, Shield, Leaf, Bolt } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
@@ -90,37 +89,24 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* vendor + driver callout */}
+      {/* driver callout */}
       <section className="py-16 md:py-20">
-        <div className="container-x grid gap-6 md:grid-cols-2">
+        <div className="container-x">
           <Reveal>
-            <div className="flex h-full flex-col rounded-3xl bg-crimson-radial p-8 text-white md:p-10">
-              <h3 className="text-2xl font-bold text-white">สมัครเป็นคนขับ HONG</h3>
-              <p className="mt-3 flex-1 text-white/80">
-                มีรถหรือสนใจขับรถ EV รับส่งผู้โดยสาร? ร่วมเป็นพาร์ตเนอร์คนขับกับเรา
-                รายได้ดี มีงานต่อเนื่องจากฐานสนามบิน
-              </p>
+            <div className="flex flex-col items-start gap-6 rounded-3xl bg-crimson-radial p-8 text-white md:flex-row md:items-center md:justify-between md:p-12">
+              <div className="max-w-xl">
+                <h3 className="text-2xl font-bold text-white">สมัครเป็นคนขับ HONG</h3>
+                <p className="mt-3 text-white/80">
+                  มีรถหรือสนใจขับรถ EV รับส่งผู้โดยสาร? ร่วมเป็นพาร์ตเนอร์คนขับกับเรา
+                  รายได้ดี มีงานต่อเนื่องจากฐานสนามบิน
+                </p>
+              </div>
               <Link
                 href="#apply"
-                className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-semibold text-crimson-900 transition-colors hover:bg-cream-600"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-cream px-7 py-3.5 text-sm font-semibold text-crimson-900 transition-colors hover:bg-cream-600"
               >
                 สมัครคนขับ <ArrowRight className="h-4 w-4" />
               </Link>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="flex h-full flex-col rounded-3xl border border-line bg-white p-8 md:p-10">
-              <h3 className="text-2xl font-bold text-crimson">สมัครร้านค้า / Vendor</h3>
-              <p className="mt-3 flex-1 text-muted">
-                ร่วมเป็นพันธมิตรร้านค้าในเครือข่าย Community Mall และจุดบริการของ HONG MOVE
-                เข้าถึงนักท่องเที่ยวและผู้โดยสารจำนวนมาก
-              </p>
-              <a
-                href={`mailto:${site.contact.email}?subject=สมัครร้านค้า Vendor`}
-                className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-crimson px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-crimson-700"
-              >
-                ติดต่อสมัครร้านค้า <ArrowRight className="h-4 w-4" />
-              </a>
             </div>
           </Reveal>
         </div>

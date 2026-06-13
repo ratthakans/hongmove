@@ -32,7 +32,7 @@ export default function ServicesPage() {
 
       {/* service cards */}
       <section className="py-16 md:py-20">
-        <div className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 0.08}>
               <div className="group h-full overflow-hidden rounded-2xl bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
