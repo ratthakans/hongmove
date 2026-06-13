@@ -10,11 +10,11 @@ export function AppTeaser() {
           <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-garnet/40 blur-[100px]" />
           <div className="relative grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-cream/40 bg-white/5 px-4 py-1.5 text-xs font-semibold text-cream">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white">
                 <Bolt className="h-4 w-4" /> เร็ว ๆ นี้ · COMING SOON
               </span>
               <h2 className="mt-5 text-3xl font-extrabold text-white sm:text-4xl">
-                แอป <span className="text-cream">“HONG”</span>
+                แอป <span className="text-white">“HONG”</span>
                 <br />
                 แอปเรียกรถของคนไทย
               </h2>

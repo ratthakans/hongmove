@@ -8,9 +8,9 @@ import { jobs } from "@/lib/data";
 import { ArrowRight, Pin, Sparkle, Shield, Leaf, Bolt } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
-  title: "ร่วมงานกับเรา",
+  title: "สมัครงาน",
   description:
-    "ร่วมเป็นส่วนหนึ่งของ HONG MOVE — รับสมัครพนักงานขับรถ Taxi VIP, พนักงานเคาน์เตอร์ และอีกหลายตำแหน่ง พร้อมสมัครร้านค้า/Vendor",
+    "สมัครงานกับ HONG MOVE — รับสมัครพนักงานขับรถ Taxi VIP, พนักงานเคาน์เตอร์ และอีกหลายตำแหน่ง พร้อมสวัสดิการครบ",
 };
 
 const perks = [
@@ -24,8 +24,8 @@ export default function CareersPage() {
   return (
     <>
       <PageHeader
-        eyebrow="ร่วมงานกับเรา"
-        title="เติบโตไปกับ HONG MOVE"
+        eyebrow="สมัครงาน · Careers"
+        title="สมัครงานกับ HONG MOVE"
         desc="ร่วมขับเคลื่อนการเดินทางแห่งอนาคตของประเทศไทย เรากำลังมองหาคนรุ่นใหม่ที่มีใจรักงานบริการมาเป็นส่วนหนึ่งของทีม"
       />
 

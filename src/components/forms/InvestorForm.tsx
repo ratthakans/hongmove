@@ -18,7 +18,7 @@ export function InvestorForm() {
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-cream/30 bg-white/10 p-8 text-center backdrop-blur">
+      <div className="rounded-2xl border border-white/40 bg-white/10 p-8 text-center backdrop-blur">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cream text-2xl text-crimson-900">
           ✓
         </div>
@@ -41,7 +41,7 @@ export function InvestorForm() {
         <Field label="เบอร์โทรศัพท์" name="phone" type="tel" required />
       </div>
       {status === "error" && (
-        <p className="rounded-xl bg-white/15 px-4 py-3 text-sm text-cream">
+        <p className="rounded-xl bg-white/15 px-4 py-3 text-sm text-white">
           ส่งไม่สำเร็จ กรุณาลองใหม่ หรือติดต่อ {`info@hongmove.co.th`}
         </p>
       )}
@@ -74,7 +74,7 @@ function Field({
   return (
     <div>
       <label className="mb-1.5 block text-sm font-medium text-white/80">
-        {label} {required && <span className="text-cream">*</span>}
+        {label} {required && <span className="text-white">*</span>}
       </label>
       <input
         type={type}

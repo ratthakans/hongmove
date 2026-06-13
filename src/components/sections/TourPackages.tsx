@@ -40,7 +40,7 @@ export function TourPackages() {
                     <h3 className="text-lg font-bold leading-snug">{t.name}</h3>
                     <div className="mt-1 text-sm">
                       <span className="text-xs text-white/70">เริ่มต้น</span>{" "}
-                      <span className="text-xl font-extrabold text-cream">฿{t.price}</span>
+                      <span className="text-xl font-extrabold text-white">฿{t.price}</span>
                       <span className="text-xs text-white/70"> /ท่าน</span>
                     </div>
                   </div>

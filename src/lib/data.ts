@@ -235,18 +235,18 @@ export const investorHighlights = [
 ];
 
 export const revenueStreams = [
-  { icon: "car", title: "Taxi VIP & Limousine", desc: "บริการรับส่งสนามบินด้วยรถ EV รายได้จากค่าโดยสารและเหมาบริการ" },
-  { icon: "bolt", title: "EV Charging Station", desc: "สถานีอัดประจุไฟฟ้าในเขตสนามบิน รายได้ต่อหน่วยพลังงานและสมาชิก" },
-  { icon: "pin", title: "Community Mall & Mixed-Use", desc: "พื้นที่ค้าปลีกและไลฟ์สไตล์ รายได้จากค่าเช่าและส่วนแบ่งยอดขาย" },
-  { icon: "fuel", title: "สถานีบริการน้ำมัน PTT", desc: "สถานีเชื้อเพลิงควบคู่ค้าปลีก เสริมรายได้และทราฟฟิกในพื้นที่" },
-  { icon: "building", title: "พัฒนาอสังหาฯ รอบสนามบิน", desc: "ที่ดินยุทธศาสตร์ในเขต ทอท. สร้างมูลค่าระยะยาวจากการพัฒนาโครงการ" },
-  { icon: "leaf", title: "Hong Travel", desc: "แพ็กเกจท่องเที่ยวอันดามัน มาร์จิ้นสูง เชื่อมต่อบริการขนส่งครบวงจร" },
+  { icon: "car", title: "Taxi VIP & Limousine", image: "/images/limo-sunset.jpg", desc: "บริการรับส่งสนามบินด้วยรถ EV รายได้จากค่าโดยสารและเหมาบริการ" },
+  { icon: "bolt", title: "EV Charging Station", image: "/images/charging.jpg", desc: "สถานีอัดประจุไฟฟ้าในเขตสนามบิน รายได้ต่อหน่วยพลังงานและสมาชิก" },
+  { icon: "pin", title: "Community Mall & Mixed-Use", image: "/images/counter-staff.jpg", desc: "พื้นที่ค้าปลีกและไลฟ์สไตล์ รายได้จากค่าเช่าและส่วนแบ่งยอดขาย" },
+  { icon: "fuel", title: "สถานีบริการน้ำมัน PTT", image: "/images/hero-airport.jpg", desc: "สถานีเชื้อเพลิงควบคู่ค้าปลีก เสริมรายได้และทราฟฟิกในพื้นที่" },
+  { icon: "building", title: "พัฒนาอสังหาฯ รอบสนามบิน", image: "/images/hero-station.jpg", desc: "ที่ดินยุทธศาสตร์ในเขต ทอท. สร้างมูลค่าระยะยาวจากการพัฒนาโครงการ" },
+  { icon: "leaf", title: "Hong Travel", image: "/images/tour-resort.jpg", desc: "แพ็กเกจท่องเที่ยวอันดามัน มาร์จิ้นสูง เชื่อมต่อบริการขนส่งครบวงจร" },
 ];
 
 export const investorAssets = [
-  { place: "ท่าอากาศยานหาดใหญ่", area: "18 ไร่", note: "แปลง 1–11 + แปลงพัฒนา PTT & Community Mall" },
-  { place: "ท่าอากาศยานเชียงใหม่", area: "9.24 ไร่", note: "ทำเลระดับ A+ ติดสำนักงานขนส่ง — โชว์รูม/ศูนย์บริการ EV/จุดเช็คอิน/คาเฟ่" },
-  { place: "ท่าอากาศยานเชียงราย", area: "พื้นที่พัฒนา", note: "Solar Floating และที่ดินขยายโครงการ" },
+  { place: "ท่าอากาศยานหาดใหญ่", area: "18 ไร่", image: "/images/hero-airport.jpg", note: "แปลง 1–11 + แปลงพัฒนา PTT & Community Mall" },
+  { place: "ท่าอากาศยานเชียงใหม่", area: "9.24 ไร่", image: "/images/tour-cablecar.jpg", note: "ทำเลระดับ A+ ติดสำนักงานขนส่ง — โชว์รูม/ศูนย์บริการ EV/จุดเช็คอิน/คาเฟ่" },
+  { place: "ท่าอากาศยานเชียงราย", area: "พื้นที่พัฒนา", image: "/images/tour-phangnga.jpg", note: "Solar Floating และที่ดินขยายโครงการ" },
 ];
 
 export const investorWhy = [

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { Counter } from "@/components/ui/Counter";
 import { ArrowRight, Plane } from "@/components/ui/Icons";
 
 const stats = [
@@ -26,7 +27,7 @@ export function Hero() {
 
       <div className="container-x relative w-full py-32">
         <div className="max-w-xl">
-          <div className="animate-in inline-flex items-center gap-2 rounded-full border border-cream/30 bg-white/10 px-4 py-1.5 text-xs font-medium text-cream backdrop-blur">
+          <div className="animate-in inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur">
             <Plane className="h-4 w-4" />
             ผู้ให้บริการรับส่งสนามบินรายแรกที่ได้รับอนุญาตจาก ทอท.
           </div>
@@ -37,7 +38,7 @@ export function Hero() {
           >
             เหนือกว่าการเดินทาง
             <br />
-            <span className="text-cream">คือการสร้างคุณค่า</span>
+            <span className="text-white">คือการสร้างคุณค่า</span>
           </h1>
 
           <p
@@ -66,7 +67,7 @@ export function Hero() {
           >
             {stats.map((s) => (
               <div key={s.v}>
-                <div className="text-3xl font-extrabold text-cream">{s.k}</div>
+                <Counter value={s.k} className="block text-3xl font-extrabold text-white" />
                 <div className="text-sm text-white/70">{s.v}</div>
               </div>
             ))}

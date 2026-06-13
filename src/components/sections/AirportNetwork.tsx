@@ -30,12 +30,12 @@ export function AirportNetwork() {
               <div
                 className={`relative h-full rounded-2xl border p-5 backdrop-blur transition-colors ${
                   a.live
-                    ? "border-cream/50 bg-cream/10"
+                    ? "border-white/40 bg-white/10"
                     : "border-white/10 bg-white/[0.04]"
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <Plane className="h-5 w-5 text-cream" />
+                  <Plane className="h-5 w-5 text-white" />
                   {a.live && (
                     <span className="rounded-full bg-cream px-2.5 py-0.5 text-[10px] font-bold text-crimson-900">
                       เปิดแล้ว
@@ -45,7 +45,7 @@ export function AirportNetwork() {
                 <h3 className="mt-4 text-lg font-bold text-white">
                   สนามบิน{a.name}
                 </h3>
-                <div className="mt-1 text-2xl font-extrabold text-cream">
+                <div className="mt-1 text-2xl font-extrabold text-white">
                   {a.cars}
                   <span className="ml-1 text-sm font-medium text-white/60">คัน</span>
                 </div>

@@ -106,8 +106,22 @@
   animation: hm-fade-up 0.7s var(--ease-out-soft) both;
 }
 
+/* Marquee (dynamic partner strip) */
+@keyframes hm-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: hm-marquee 24s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .animate-in { animation: none; }
+  .animate-marquee { animation: none; }
   html { scroll-behavior: auto; }
 }

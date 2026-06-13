@@ -36,14 +36,14 @@ export default function EnPage() {
         <div className="pointer-events-none absolute -right-40 top-0 h-[32rem] w-[32rem] rounded-full bg-garnet/40 blur-[120px]" />
         <div className="container-x relative grid min-h-[82vh] items-center gap-12 pt-28 pb-16 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-white/5 px-4 py-1.5 text-xs font-medium text-cream">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/5 px-4 py-1.5 text-xs font-medium text-white">
               <Plane className="h-4 w-4" />
               First AOT-licensed airport transfer at Hat Yai
             </div>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
               Hat Yai Airport
               <br />
-              <span className="text-cream">Taxi & Limousine</span>
+              <span className="text-white">Taxi & Limousine</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
               Premium 100% electric airport transfers — to Hat Yai city, Songkhla,
@@ -73,7 +73,7 @@ export default function EnPage() {
                 { k: "24/7", v: "Available" },
               ].map((s) => (
                 <div key={s.v}>
-                  <div className="text-3xl font-extrabold text-cream">{s.k}</div>
+                  <div className="text-3xl font-extrabold text-white">{s.k}</div>
                   <div className="text-sm text-white/65">{s.v}</div>
                 </div>
               ))}
@@ -168,7 +168,7 @@ export default function EnPage() {
                 <Phone className="h-5 w-5" /> {site.contact.mobile}
               </a>
             </div>
-            <Link href="/" className="mt-8 inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-cream">
+            <Link href="/" className="mt-8 inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white">
               ดูเว็บไซต์ภาษาไทย <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

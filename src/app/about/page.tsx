@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal>
               <div className="h-full rounded-3xl bg-crimson-radial p-8 text-white md:p-10">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cream">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
                   วิสัยทัศน์ · Vision
                 </span>
                 <p className="mt-5 text-xl font-semibold leading-relaxed md:text-2xl">

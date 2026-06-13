@@ -74,9 +74,8 @@ export const trustPoints = [
 export const nav = [
   { label: "เกี่ยวกับเรา", href: "/about" },
   { label: "บริการ", href: "/services" },
-  { label: "ธุรกิจ", href: "/business" },
-  { label: "นักลงทุน", href: "/investor" },
-  { label: "ร่วมงานกับเรา", href: "/careers" },
+  { label: "ธุรกิจ & นักลงทุน", href: "/business" },
+  { label: "สมัครงาน", href: "/careers" },
   { label: "บทความ", href: "/news" },
   { label: "ติดต่อเรา", href: "/contact" },
 ] as const;

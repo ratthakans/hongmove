@@ -30,7 +30,7 @@ export default function BookingPage() {
               <ul className="mt-4 space-y-3">
                 {trustPoints.map((t) => (
                   <li key={t} className="flex gap-3 text-sm text-white/85">
-                    <Shield className="h-5 w-5 shrink-0 text-cream" />
+                    <Shield className="h-5 w-5 shrink-0 text-white" />
                     {t}
                   </li>
                 ))}

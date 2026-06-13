@@ -16,14 +16,14 @@ export function PageHeader({
       <div className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-garnet/30 blur-[120px]" />
       <div className="container-x relative">
         <nav className="mb-4 flex items-center gap-2 text-xs text-white/60">
-          <Link href="/" className="transition-colors hover:text-cream">
+          <Link href="/" className="transition-colors hover:text-white">
             หน้าแรก
           </Link>
           <span>/</span>
-          <span className="text-cream">{crumb ?? title}</span>
+          <span className="text-white">{crumb ?? title}</span>
         </nav>
         {eyebrow && (
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cream">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
             {eyebrow}
           </span>
         )}

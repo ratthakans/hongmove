@@ -5,7 +5,7 @@ import { Phone, Mail, Pin } from "@/components/ui/Icons";
 
 export function Footer() {
   return (
-    <footer className="bg-crimson-radial text-white">
+    <footer className="bg-[#140c0d] text-white">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <Image
@@ -21,7 +21,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-cream">
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
             เมนู
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-cream">
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
             บริการ
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
@@ -49,22 +49,22 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-cream">
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
             ติดต่อเรา
           </h4>
           <ul className="mt-4 space-y-3 text-sm text-white/75">
             <li className="flex gap-3">
-              <Pin className="mt-0.5 h-4 w-4 shrink-0 text-cream" />
+              <Pin className="mt-0.5 h-4 w-4 shrink-0 text-white" />
               <span>{site.contact.address}</span>
             </li>
             <li className="flex gap-3">
-              <Phone className="h-4 w-4 shrink-0 text-cream" />
+              <Phone className="h-4 w-4 shrink-0 text-white" />
               <a href={`tel:${site.contact.mobile.replace(/\s/g, "")}`} className="hover:text-white">
                 {site.contact.mobile}
               </a>
             </li>
             <li className="flex gap-3">
-              <Mail className="h-4 w-4 shrink-0 text-cream" />
+              <Mail className="h-4 w-4 shrink-0 text-white" />
               <a href={`mailto:${site.contact.email}`} className="hover:text-white">
                 {site.contact.email}
               </a>

@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="bg-crimson-radial flex min-h-[80vh] items-center text-white">
       <div className="container-x text-center">
-        <div className="text-7xl font-extrabold text-cream md:text-8xl">404</div>
+        <div className="text-7xl font-extrabold text-white md:text-8xl">404</div>
         <h1 className="mt-4 text-2xl font-bold md:text-3xl">ไม่พบหน้าที่คุณค้นหา</h1>
         <p className="mx-auto mt-3 max-w-md text-white/75">
           หน้าที่คุณต้องการอาจถูกย้ายหรือไม่มีอยู่แล้ว ลองกลับไปหน้าแรกหรือจองรถกับเราได้เลย
