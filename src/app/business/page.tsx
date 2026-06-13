@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
-import { Counter } from "@/components/ui/Counter";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AirportNetwork } from "@/components/sections/AirportNetwork";
 import { CTASection } from "@/components/sections/CTASection";
@@ -33,15 +32,12 @@ export default function BusinessPage() {
         desc="HONG MOVE ไม่ได้มีแค่ธุรกิจรถ — แต่คือแพลตฟอร์มการเดินทางและพัฒนาเชิงพาณิชย์ ที่ผสานสัมปทานสนามบิน พลังงานสะอาด ค้าปลีก และอสังหาริมทรัพย์เข้าด้วยกัน"
       />
 
-      {/* highlights — animated counters */}
+      {/* highlights */}
       <section className="border-b border-line bg-white">
         <div className="container-x grid grid-cols-2 gap-6 py-12 md:grid-cols-4">
           {investorHighlights.map((h) => (
             <div key={h.v} className="text-center">
-              <Counter
-                value={h.k}
-                className="block text-4xl font-extrabold text-crimson md:text-5xl"
-              />
+              <div className="text-4xl font-extrabold text-crimson md:text-5xl">{h.k}</div>
               <div className="mt-1.5 text-sm text-muted">{h.v}</div>
             </div>
           ))}

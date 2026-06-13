@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Counter } from "@/components/ui/Counter";
 import { ArrowRight, Plane } from "@/components/ui/Icons";
 
 const stats = [
@@ -67,7 +66,7 @@ export function Hero() {
           >
             {stats.map((s) => (
               <div key={s.v}>
-                <Counter value={s.k} className="block text-3xl font-extrabold text-white" />
+                <div className="text-3xl font-extrabold text-white">{s.k}</div>
                 <div className="text-sm text-white/70">{s.v}</div>
               </div>
             ))}
