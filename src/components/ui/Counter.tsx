@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
-/** นับเลขขึ้นเมื่อเลื่อนถึง (รองรับค่าที่มีตัวอักษรนำ/ตาม เช่น "8+", "1,000+", "รายแรก") */
+/** นับเลขขึ้นเมื่อเลื่อนถึง — สงวนความกว้างของค่าสุดท้ายไว้ ตัวเลขจึงไม่ดิ้น */
 export function Counter({ value, className }: { value: string; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const m = value.match(/^(\D*)([\d,]+)(\D*)$/);
   const target = m ? parseInt(m[2].replace(/,/g, ""), 10) : 0;
-  const [n, setN] = useState(m ? 0 : -1);
+  const [n, setN] = useState(0);
 
   useEffect(() => {
     if (!m) return;
@@ -17,7 +18,7 @@ export function Counter({ value, className }: { value: string; className?: strin
       ([e]) => {
         if (!e.isIntersecting) return;
         io.disconnect();
-        const dur = 1300;
+        const dur = 1200;
         const start = performance.now();
         const tick = (t: number) => {
           const p = Math.min(1, (t - start) / dur);
@@ -33,9 +34,17 @@ export function Counter({ value, className }: { value: string; className?: strin
     return () => io.disconnect();
   }, [m, target]);
 
+  if (!m) return <span className={className}>{value}</span>;
+
+  const current = `${m[1]}${n.toLocaleString("en-US")}${m[3]}`;
   return (
-    <span ref={ref} className={className}>
-      {m ? `${m[1]}${n.toLocaleString("en-US")}${m[3]}` : value}
+    <span ref={ref} className={cn("relative inline-block tabular-nums", className)}>
+      {/* placeholder สงวนความกว้างเท่าค่าสุดท้าย (มองไม่เห็น) */}
+      <span aria-hidden className="invisible">
+        {value}
+      </span>
+      {/* ตัวเลขที่กำลังนับ ทับบนพื้นที่เดิม */}
+      <span className="absolute inset-0">{current}</span>
     </span>
   );
 }

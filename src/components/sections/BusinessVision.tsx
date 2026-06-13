@@ -12,7 +12,7 @@ export function BusinessVision() {
         <Reveal className="order-2 lg:order-1">
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
             <Image
-              src="/images/charging.jpg"
+              src="/images/biz-developer.jpg"
               alt="เคาน์เตอร์บริการ HONG MOVE"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -235,11 +235,11 @@ export const investorHighlights = [
 ];
 
 export const revenueStreams = [
-  { icon: "car", title: "Taxi VIP & Limousine", image: "/images/limo-sunset.jpg", desc: "บริการรับส่งสนามบินด้วยรถ EV รายได้จากค่าโดยสารและเหมาบริการ" },
-  { icon: "bolt", title: "EV Charging Station", image: "/images/charging.jpg", desc: "สถานีอัดประจุไฟฟ้าในเขตสนามบิน รายได้ต่อหน่วยพลังงานและสมาชิก" },
-  { icon: "pin", title: "Community Mall & Mixed-Use", image: "/images/counter-staff.jpg", desc: "พื้นที่ค้าปลีกและไลฟ์สไตล์ รายได้จากค่าเช่าและส่วนแบ่งยอดขาย" },
+  { icon: "car", title: "Taxi VIP & Limousine", image: "/images/biz-mobility.jpg", desc: "บริการรับส่งสนามบินด้วยรถ EV รายได้จากค่าโดยสารและเหมาบริการ" },
+  { icon: "bolt", title: "EV Charging Station", image: "/images/biz-energy.jpg", desc: "สถานีอัดประจุไฟฟ้าในเขตสนามบิน รายได้ต่อหน่วยพลังงานและสมาชิก" },
+  { icon: "pin", title: "Community Mall & Mixed-Use", image: "/images/mixed-use.jpg", desc: "พื้นที่ค้าปลีกและไลฟ์สไตล์ รายได้จากค่าเช่าและส่วนแบ่งยอดขาย" },
   { icon: "fuel", title: "สถานีบริการน้ำมัน PTT", image: "/images/hero-airport.jpg", desc: "สถานีเชื้อเพลิงควบคู่ค้าปลีก เสริมรายได้และทราฟฟิกในพื้นที่" },
-  { icon: "building", title: "พัฒนาอสังหาฯ รอบสนามบิน", image: "/images/hero-station.jpg", desc: "ที่ดินยุทธศาสตร์ในเขต ทอท. สร้างมูลค่าระยะยาวจากการพัฒนาโครงการ" },
+  { icon: "building", title: "พัฒนาอสังหาฯ รอบสนามบิน", image: "/images/biz-developer.jpg", desc: "ที่ดินยุทธศาสตร์ในเขต ทอท. สร้างมูลค่าระยะยาวจากการพัฒนาโครงการ" },
   { icon: "leaf", title: "Hong Travel", image: "/images/tour-resort.jpg", desc: "แพ็กเกจท่องเที่ยวอันดามัน มาร์จิ้นสูง เชื่อมต่อบริการขนส่งครบวงจร" },
 ];
 
