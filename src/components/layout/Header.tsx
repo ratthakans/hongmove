@@ -49,10 +49,7 @@ export function Header() {
         {/* desktop nav */}
         <nav className="hidden items-center gap-5 xl:gap-6 lg:flex">
           {nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+            const active = pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
