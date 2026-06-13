@@ -8,34 +8,56 @@ import { Line } from "@/components/ui/Icons";
 const services = ["Taxi VIP", "Limousine", "เช่ารถ EV", "แพ็กเกจทัวร์"];
 
 export function BookingForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [sent, setSent] = useState(false);
+  const [lineUrl, setLineUrl] = useState<string>(site.links.line);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
-    const ok = await submitLead("booking", e.currentTarget);
-    if (ok) setSent(true);
-    else setStatus("error");
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const g = (k: string) => (fd.get(k) ?? "").toString().trim();
+
+    const msg = [
+      "🚕 ขอจองรถ HONG MOVE",
+      `บริการ: ${g("service")}`,
+      `จาก: ${g("pickup")}`,
+      `ไป: ${g("dropoff")}`,
+      `วันที่: ${g("date")}  เวลา: ${g("time")}`,
+      `ผู้โดยสาร: ${g("passengers")}`,
+      `ชื่อ: ${g("name")}`,
+      `โทร: ${g("phone")}`,
+      g("note") ? `หมายเหตุ: ${g("note")}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const url = site.links.lineOaMessage + encodeURIComponent(msg);
+    setLineUrl(url);
+    // เก็บสำเนาเข้าอีเมลทีมงานไว้เป็นหลักฐาน (ไม่บล็อก UX)
+    submitLead("booking", form).catch(() => {});
+    // เปิด LINE OA พร้อมข้อความจอง — ต้องเรียกในจังหวะคลิกเพื่อไม่ให้โดน popup-block
+    window.open(url, "_blank", "noopener");
+    setSent(true);
   }
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-crimson/20 bg-crimson/5 p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-crimson text-2xl text-white">
-          ✓
+      <div className="rounded-2xl border border-[#06C755]/30 bg-[#06C755]/5 p-8 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#06C755] text-white">
+          <Line className="h-7 w-7" />
         </div>
-        <h3 className="mt-4 text-xl font-bold text-crimson">รับคำขอจองแล้ว</h3>
+        <h3 className="mt-4 text-xl font-bold text-crimson">เปิด LINE เพื่อยืนยันการจอง</h3>
         <p className="mt-2 text-sm text-muted">
-          ทีมงานจะติดต่อกลับเพื่อยืนยันการจองโดยเร็วที่สุด หรือแชทกับเราทาง LINE เพื่อจองทันที
+          เราเปิดแชต LINE พร้อมรายละเอียดการจองให้แล้ว — <b>กด “ส่ง” ในไลน์</b>
+          เพื่อยืนยัน จากนั้นทีมงานเซลจะโทรกลับเพื่อยืนยันการจองและราคา
         </p>
         <a
-          href={site.links.line}
+          href={lineUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#06C755] px-6 py-3 text-sm font-semibold text-white"
         >
-          <Line className="h-5 w-5" /> จองด่วนผ่าน LINE
+          <Line className="h-5 w-5" /> เปิด LINE อีกครั้ง
         </a>
       </div>
     );
@@ -98,28 +120,16 @@ export function BookingForm() {
         />
       </div>
 
-      {status === "error" && (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
-          ส่งไม่สำเร็จ กรุณาลองใหม่ หรือจองผ่าน LINE / โทรหาเรา
-        </p>
-      )}
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="rounded-full bg-crimson px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-crimson-700 disabled:opacity-60"
-        >
-          {status === "sending" ? "กำลังส่ง…" : "ขอจองรถ"}
-        </button>
-        <a
-          href={site.links.line}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#06C755] px-8 py-3.5 text-sm font-semibold text-[#06C755] transition-colors hover:bg-[#06C755] hover:text-white"
-        >
-          <Line className="h-5 w-5" /> จองผ่าน LINE
-        </a>
-      </div>
+      <button
+        type="submit"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#06C755] px-8 py-4 text-base font-semibold text-white transition-colors hover:brightness-95"
+      >
+        <Line className="h-5 w-5" /> จองผ่าน LINE
+      </button>
+      <p className="text-center text-xs text-muted">
+        กดแล้วระบบจะเปิดแชต LINE พร้อมรายละเอียดการจอง — กด “ส่ง” เพื่อยืนยัน
+        ทีมงานจะโทรกลับเพื่อยืนยันราคา
+      </p>
     </form>
   );
 }

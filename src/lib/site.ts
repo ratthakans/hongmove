@@ -24,6 +24,8 @@ export const site = {
   links: {
     line: "https://line.me/R/ti/p/@hongmove",
     callPrimary: "tel:+66656564800",
+    // ส่งข้อความถึง LINE OA โดยตรง (เติมข้อความต่อท้ายแบบ encodeURIComponent)
+    lineOaMessage: "https://line.me/R/oaMessage/%40hongmove/?",
   },
 } as const;
 
@@ -119,12 +121,6 @@ export const services = [
     title: "เช่ารถ EV",
     desc: "เช่ารถยนต์ไฟฟ้ารายวัน/รายเดือน พร้อมคนขับมืออาชีพ",
     image: "/images/fleet-airport.jpg",
-  },
-  {
-    slug: "travel",
-    title: "Hong Travel",
-    desc: "แพ็กเกจท่องเที่ยวเชื่อมต่ออ่าวไทย–อันดามัน เกาะหลีเป๊ะ และจุดหมายเด่นภาคใต้",
-    image: "/images/tour-phangnga.jpg",
   },
 ] as const;
 

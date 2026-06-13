@@ -15,7 +15,7 @@ export function Services() {
           desc="ตั้งแต่รับส่งสนามบินระดับ VIP ไปจนถึงแพ็กเกจท่องเที่ยว — ทุกบริการขับเคลื่อนด้วยพลังงานสะอาด"
         />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 0.08}>
               <Link
