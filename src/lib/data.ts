@@ -264,18 +264,3 @@ export const investorRoadmap = [
   { phase: "เฟส 4", title: "เครือข่ายทั่วประเทศ", desc: "ขยายบริการครอบคลุมสนามบินหลัก 8+ แห่ง สู่เมืองและสนามบินสีเขียว" },
 ];
 
-/* ---------- Gallery ---------- */
-export const gallery = [
-  { src: "/images/scenic-pier.jpg", caption: "Taxi VIP ณ จุดชมวิวปากบารา" },
-  { src: "/images/hero-road.jpg", caption: "รถ EV บนเส้นทางสู่สนามบิน" },
-  { src: "/images/limo-sunset.jpg", caption: "BYD Sealion 7 — Limousine" },
-  { src: "/images/taxi-portrait.jpg", caption: "JY Air — Taxi VIP" },
-  { src: "/images/charging.jpg", caption: "สถานีอัดประจุไฟฟ้า EV" },
-  { src: "/images/fleet-airport.jpg", caption: "จุดให้บริการ ณ ท่าอากาศยาน" },
-  { src: "/images/tour-phangnga.jpg", caption: "อ่าวพังงา — เขาตาปู เจมส์บอนด์" },
-  { src: "/images/tour-resort.jpg", caption: "เกาะหลีเป๊ะ — มัลดีฟส์เมืองไทย" },
-  { src: "/images/tour-cablecar.jpg", caption: "นั่งกระเช้าชมวิวเขา" },
-  { src: "/images/taxi-trails.jpg", caption: "บริการ 24 ชั่วโมง" },
-  { src: "/images/uniforms.jpg", caption: "เครื่องแบบพนักงาน Taxi VIP" },
-  { src: "/images/app-mascot.jpg", caption: "แอป HONG — เร็ว ๆ นี้" },
-];

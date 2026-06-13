@@ -13,8 +13,8 @@ export function Hero() {
     <section className="relative flex min-h-[92vh] items-center overflow-hidden">
       {/* full-bleed scenic photo */}
       <Image
-        src="/images/scenic-pier.jpg"
-        alt="HONG MOVE Taxi VIP ยานยนต์ไฟฟ้า ณ จุดชมวิวปากบารา"
+        src="/images/hero-airport.jpg"
+        alt="ท่าอากาศยานหาดใหญ่ — HONG MOVE Taxi VIP & Limousine"
         fill
         priority
         sizes="100vw"
