@@ -13,12 +13,12 @@ export function Hero() {
     <section className="relative flex min-h-[92vh] items-center overflow-hidden">
       {/* full-bleed scenic photo */}
       <Image
-        src="/images/hero-airport.jpg"
-        alt="ท่าอากาศยานหาดใหญ่ — HONG MOVE Taxi VIP & Limousine"
+        src="/images/hero-station.jpg"
+        alt="HONG MOVE Taxi VIP ยานยนต์ไฟฟ้า ณ ท่าอากาศยานหาดใหญ่"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[60%_center]"
+        className="object-cover object-[58%_center]"
       />
       {/* brand gradient overlays for legibility */}
       <div className="absolute inset-0 bg-gradient-to-r from-crimson-900/95 via-crimson-900/55 to-crimson-900/10" />

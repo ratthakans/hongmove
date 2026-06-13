@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { airports } from "@/lib/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -5,7 +6,15 @@ import { Plane } from "@/components/ui/Icons";
 
 export function AirportNetwork() {
   return (
-    <section className="relative overflow-hidden bg-crimson-radial py-20 text-white md:py-28">
+    <section className="relative overflow-hidden py-16 text-white md:py-20">
+      <Image
+        src="/images/hero-airport.jpg"
+        alt="ท่าอากาศยานหาดใหญ่"
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-crimson-900/90" />
       <div className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-garnet/30 blur-[120px]" />
       <div className="container-x relative">
         <SectionHeading
