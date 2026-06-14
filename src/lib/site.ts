@@ -111,16 +111,16 @@ export const services = [
   {
     slug: "limousine",
     title: "Limousine",
-    desc: "บริการลีมูซีนพรีเมียม Deepal S05 สำหรับการเดินทางที่หรูหราและเป็นส่วนตัว",
+    desc: "ลีมูซีนพรีเมียม 3 รุ่น — Deepal S05, ZEEKER 009 และรถตู้ FARIZON รองรับทุกขนาดการเดินทาง",
     image: "/images/deepal-silver.jpg",
     badge: "เริ่มให้บริการ 1 ส.ค. 2569",
   },
   {
     slug: "rental",
     title: "เช่ารถ EV",
-    desc: "เช่ารถยนต์ไฟฟ้า Deepal S05 รายวัน/รายเดือน พร้อมคนขับมืออาชีพ",
-    image: "/images/biz-mobility.jpg",
-    badge: "Next Project",
+    desc: "เช่ารถยนต์ไฟฟ้า MG ES สีขาว รายวัน/รายเดือน สะดวก ประหยัด เป็นมิตรต่อสิ่งแวดล้อม",
+    image: "/images/mg-es.jpg",
+    badge: "เร็วๆ นี้",
   },
 ] as const;
 
