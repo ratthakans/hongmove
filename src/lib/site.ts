@@ -105,7 +105,7 @@ export const services = [
     slug: "taxi-vip",
     title: "Taxi VIP",
     desc: "รถแท็กซี่ไฟฟ้าระดับ VIP รับส่งสนามบิน สะดวก ปลอดภัย ราคาเป็นธรรม",
-    image: "/images/taxi-trails.jpg",
+    image: "/images/taxi-vip-car.jpg",
     badge: "เปิดให้บริการแล้ว",
   },
   {
@@ -118,8 +118,8 @@ export const services = [
   {
     slug: "rental",
     title: "เช่ารถ EV",
-    desc: "เช่ารถยนต์ไฟฟ้า MG ES สีขาว รายวัน/รายเดือน สะดวก ประหยัด เป็นมิตรต่อสิ่งแวดล้อม",
-    image: "/images/mg-es.jpg",
+    desc: "เช่ารถยนต์ไฟฟ้า MG ES รายวัน/รายเดือน สะดวก ประหยัด เป็นมิตรต่อสิ่งแวดล้อม",
+    image: "/images/mg-es-rental.jpg",
     badge: "เร็วๆ นี้",
   },
 ] as const;
