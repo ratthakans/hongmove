@@ -62,10 +62,10 @@ export function BookingForm() {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#06C755] text-white">
           <Line className="h-7 w-7" />
         </div>
-        <h3 className="mt-4 text-xl font-bold text-crimson">เปิด LINE เพื่อยืนยันการจอง</h3>
+        <h3 className="mt-4 text-xl font-bold text-crimson">ได้รับคำขอจองของคุณแล้ว</h3>
         <p className="mt-2 text-sm text-muted">
-          เราเปิดแชต LINE พร้อมรายละเอียดการจองให้แล้ว — <b>กด “ส่ง” ในไลน์</b>
-          เพื่อยืนยัน จากนั้นทีมงานเซลจะโทรกลับเพื่อยืนยันการจองและราคา
+          คำขอจองถูกส่งเข้าระบบของทีมงานเรียบร้อยแล้ว และเราเปิดแชต LINE ให้ด้วย —
+          <b>กด “ส่ง” ในไลน์</b> เพื่อยืนยัน ทีมงานจะติดต่อกลับเพื่อยืนยันราคาและเวลา
         </p>
         <a
           href={lineUrl}
@@ -138,13 +138,13 @@ export function BookingForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#06C755] px-8 py-4 text-base font-semibold text-white transition-colors hover:brightness-95"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-crimson px-8 py-4 text-base font-semibold text-white transition-colors hover:brightness-110"
       >
-        <Line className="h-5 w-5" /> จองผ่าน LINE
+        ยืนยันการจอง <Line className="h-5 w-5" />
       </button>
       <p className="text-center text-xs text-muted">
-        กดแล้วระบบจะเปิดแชต LINE พร้อมรายละเอียดการจอง — กด “ส่ง” เพื่อยืนยัน
-        ทีมงานจะโทรกลับเพื่อยืนยันราคา
+        กดแล้วคำขอจองจะเข้าระบบของทีมงานทันที และเปิดแชต LINE ให้คุณยืนยัน —
+        ทีมงานจะติดต่อกลับเพื่อยืนยันราคาและเวลา
       </p>
     </form>
   );
