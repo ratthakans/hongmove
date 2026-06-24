@@ -15,6 +15,18 @@ const LABELS: Record<LeadType, string> = {
   investor: "คำขอเอกสารนักลงทุน",
 };
 
+/**
+ * ปลายทางอีเมลแยกตามประเภท lead (override ได้ผ่าน env)
+ * - investor    → พี่หนุ่ม dechchat@hongmove.co.th
+ * - application → ปลายทางหลัก (LEAD_TO_EMAIL/info@) + CC mkt@hongmove.co.th
+ */
+const ROUTING: Record<LeadType, { to?: string; cc?: string }> = {
+  booking: {},
+  contact: {},
+  application: { cc: process.env.LEAD_APPLICATION_CC || "mkt@hongmove.co.th" },
+  investor: { to: process.env.LEAD_INVESTOR_TO || "dechchat@hongmove.co.th" },
+};
+
 const FIELD_LABELS: Record<string, string> = {
   service: "ประเภทบริการ",
   pickup: "จุดรับ",
@@ -53,11 +65,13 @@ export async function sendLead(
   data: Record<string, string>,
 ): Promise<{ ok: boolean; emailed: boolean }> {
   const key = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_TO_EMAIL || "info@hongmove.co.th";
+  const route = ROUTING[type];
+  const to = route.to || process.env.LEAD_TO_EMAIL || "info@hongmove.co.th";
+  const cc = route.cc || undefined;
   const from = process.env.LEAD_FROM_EMAIL || "HONG MOVE <onboarding@resend.dev>";
 
   if (!key) {
-    console.warn(`[lead:${type}] RESEND_API_KEY ไม่ได้ตั้งค่า — ยังไม่ส่งอีเมล`, data);
+    console.warn(`[lead:${type}] RESEND_API_KEY ไม่ได้ตั้งค่า — ยังไม่ส่งอีเมล (to=${to}${cc ? ", cc=" + cc : ""})`, data);
     return { ok: true, emailed: false };
   }
 
@@ -67,6 +81,7 @@ export async function sendLead(
     const { error } = await resend.emails.send({
       from,
       to,
+      ...(cc ? { cc } : {}),
       replyTo: data.email || undefined,
       subject: `[${LABELS[type]}] ${data.name ?? ""} ${data.phone ?? ""}`.trim(),
       html: toHtml(type, data),

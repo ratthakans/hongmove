@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/sections/CTASection";
+import { VehicleCapacity } from "@/components/sections/VehicleCapacity";
 import { Button } from "@/components/ui/Button";
 import { services } from "@/lib/site";
 import { fleet } from "@/lib/data";
@@ -111,6 +112,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* passenger & luggage capacity infographic */}
+      <VehicleCapacity />
 
       {/* rates link */}
       <section className="bg-cloud py-16 md:py-20">

@@ -53,11 +53,14 @@ export const projectHighlights = [
 ];
 
 /* ---------- Services: fleet + rate table ---------- */
+// หมายเหตุ: pax = จำนวนผู้โดยสาร (ไม่รวมคนขับ), luggage = จำนวนกระเป๋าเดินทาง (ตัวเลขประมาณ — ทีมงานปรับได้)
 export const fleet = [
   {
     name: "JY Air — Taxi VIP",
     type: "Taxi VIP",
     seats: "4 ที่นั่ง",
+    pax: 3,
+    luggage: 2,
     image: "/images/taxi-portrait.jpg",
     desc: "รถเก๋งไฟฟ้าระดับพรีเมียม เหมาะสำหรับรับส่งสนามบินและการเดินทางในเมือง",
   },
@@ -65,6 +68,8 @@ export const fleet = [
     name: "Deepal S05 — Ganymede",
     type: "Limousine",
     seats: "5 ที่นั่ง",
+    pax: 4,
+    luggage: 3,
     image: "/images/deepal-silver.jpg",
     desc: "รถยนต์ไฟฟ้า Deepal S05 สี Ganymede หรูหรา รุ่นหน้าปกของบริการลีมูซีน เหมาะกับการเดินทางที่ต้องการความสบายเป็นพิเศษ",
   },
@@ -72,6 +77,8 @@ export const fleet = [
     name: "ZEEKER 009 — Phantom Black",
     type: "Limousine",
     seats: "6–7 ที่นั่ง",
+    pax: 6,
+    luggage: 4,
     image: "/images/zeeker009.jpg",
     desc: "MPV ไฟฟ้าระดับเฟิร์สคลาส สี Phantom Black กว้างขวาง เงียบ นั่งสบาย สำหรับกลุ่มเดินทางหรือลูกค้า VIP",
   },
@@ -79,6 +86,8 @@ export const fleet = [
     name: "FARIZON — รถตู้ไฟฟ้า",
     type: "Limousine Van",
     seats: "สูงสุด 11 ที่นั่ง",
+    pax: 10,
+    luggage: 8,
     image: "/images/farizon-van.jpg",
     desc: "รถตู้ไฟฟ้า FARIZON สีขาว รองรับคณะเดินทางขนาดใหญ่และสัมภาระจำนวนมาก สะดวกสบายตลอดเส้นทาง",
   },
@@ -86,6 +95,8 @@ export const fleet = [
     name: "MG ES — รถเช่า EV",
     type: "เร็วๆ นี้",
     seats: "5 ที่นั่ง",
+    pax: 4,
+    luggage: 3,
     image: "/images/mg-es-rental.jpg",
     desc: "รถยนต์ไฟฟ้า MG ES สำหรับบริการเช่ารายวัน/รายเดือน — เปิดให้บริการเร็ว ๆ นี้",
   },
