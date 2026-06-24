@@ -33,9 +33,25 @@ export function BookingForm() {
 
     const url = site.links.lineOaMessage + encodeURIComponent(msg);
     setLineUrl(url);
-    // เก็บสำเนาเข้าอีเมลทีมงานไว้เป็นหลักฐาน (ไม่บล็อก UX)
+    // [1] ส่งคำสั่งจองเข้า dashboard ระบบหลังบ้านทันที (ไม่บล็อก UX)
+    fetch("/api/book", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        service: g("service"),
+        pickup: g("pickup"),
+        dropoff: g("dropoff"),
+        date: g("date"),
+        time: g("time"),
+        passengers: g("passengers"),
+        name: g("name"),
+        phone: g("phone"),
+        note: g("note"),
+      }),
+    }).catch(() => {});
+    // [2] เก็บสำเนาเข้าอีเมลทีมงานไว้เป็นหลักฐานสำรอง
     submitLead("booking", form).catch(() => {});
-    // เปิด LINE OA พร้อมข้อความจอง — ต้องเรียกในจังหวะคลิกเพื่อไม่ให้โดน popup-block
+    // [3] เปิด LINE OA พร้อมข้อความจอง — ต้องเรียกในจังหวะคลิกเพื่อไม่ให้โดน popup-block
     window.open(url, "_blank", "noopener");
     setSent(true);
   }
