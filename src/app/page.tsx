@@ -2,6 +2,8 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Partners } from "@/components/sections/Partners";
 import { Services } from "@/components/sections/Services";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { PopularRoutes } from "@/components/sections/PopularRoutes";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { AirportNetwork } from "@/components/sections/AirportNetwork";
 import { BusinessVision } from "@/components/sections/BusinessVision";
@@ -33,6 +35,8 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <Services />
+      <HowItWorks />
+      <PopularRoutes />
       <WhyUs />
       <TourPackages />
       <AirportNetwork />
