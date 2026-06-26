@@ -51,10 +51,34 @@ function stepIndex(status?: string): number {
   }
 }
 
+type Msg = { sender: "admin" | "customer"; senderName?: string; text: string; createdAt?: string };
+
 export default function TrackPage() {
   const { token } = useParams<{ token: string }>();
   const [data, setData] = useState<Track | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "notfound" | "error">("loading");
+  const [messages, setMessages] = useState<Msg[]>([]);
+  const [draft, setDraft] = useState("");
+  const [sending, setSending] = useState(false);
+
+  async function sendMessage() {
+    const text = draft.trim();
+    if (!text || sending || !token) return;
+    setSending(true);
+    // optimistic
+    setMessages((m) => [...m, { sender: "customer", text }]);
+    setDraft("");
+    try {
+      await fetch(`/api/track/${token}/messages`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+    } catch {
+      /* ปล่อยให้รอบ poll ถัดไป sync เอง */
+    }
+    setSending(false);
+  }
 
   useEffect(() => {
     if (!token) return;
@@ -76,13 +100,16 @@ export default function TrackPage() {
           if (!alive) return;
           setData(j);
           setState("ok");
-          // หยุด poll เมื่องานจบ/ยกเลิก
-          if (j.status === "completed" || j.status === "cancelled") return;
+          // ดึงข้อความแชทควบคู่กัน
+          fetch(`/api/track/${token}/messages`, { cache: "no-store" })
+            .then((m) => (m.ok ? m.json() : { messages: [] }))
+            .then((d) => alive && Array.isArray(d.messages) && setMessages(d.messages))
+            .catch(() => {});
         }
       } catch {
         if (alive) setState((s) => (s === "ok" ? "ok" : "error"));
       }
-      timer = setTimeout(load, 5000);
+      timer = setTimeout(load, 5000);   // poll ต่อเนื่อง (สำหรับสถานะ + แชท)
     };
     load();
     return () => {
@@ -213,8 +240,59 @@ export default function TrackPage() {
                   </ol>
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-white p-5 text-center">
-                  <p className="text-sm text-muted">มีคำถามหรือต้องการแก้ไขการจอง?</p>
+                {/* แชทกับทีมงาน */}
+                <div className="mt-6 overflow-hidden rounded-2xl border border-line bg-white">
+                  <div className="border-b border-line px-5 py-3">
+                    <h2 className="text-sm font-bold text-ink">แชทกับทีมงาน</h2>
+                    <p className="text-xs text-muted">สอบถามหรือแก้ไขการจองได้ที่นี่</p>
+                  </div>
+                  <div className="flex max-h-72 min-h-[8rem] flex-col gap-2 overflow-y-auto bg-cloud/40 px-4 py-4">
+                    {messages.length === 0 ? (
+                      <p className="my-auto text-center text-sm text-muted">
+                        เริ่มแชทกับทีมงานได้เลย — เราจะตอบกลับโดยเร็วที่สุด
+                      </p>
+                    ) : (
+                      messages.map((m, i) => (
+                        <div
+                          key={i}
+                          className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
+                            m.sender === "customer"
+                              ? "self-end bg-crimson text-white"
+                              : "self-start border border-line bg-white text-ink"
+                          }`}
+                        >
+                          {m.sender === "admin" && m.senderName && (
+                            <p className="mb-0.5 text-[11px] font-semibold text-garnet">{m.senderName}</p>
+                          )}
+                          {m.text}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      sendMessage();
+                    }}
+                    className="flex items-center gap-2 border-t border-line p-3"
+                  >
+                    <input
+                      value={draft}
+                      onChange={(e) => setDraft(e.target.value)}
+                      placeholder="พิมพ์ข้อความ…"
+                      className="flex-1 rounded-full border border-line bg-white px-4 py-2.5 text-sm outline-none focus:border-crimson"
+                    />
+                    <button
+                      type="submit"
+                      disabled={sending || !draft.trim()}
+                      className="rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:brightness-110 disabled:opacity-50"
+                    >
+                      ส่ง
+                    </button>
+                  </form>
+                </div>
+
+                <div className="mt-4 text-center">
                   <LineButton />
                 </div>
               </>
