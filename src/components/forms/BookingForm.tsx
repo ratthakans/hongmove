@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { site } from "@/lib/site";
 import { submitLead } from "@/lib/leads";
 import { Line } from "@/components/ui/Icons";
@@ -8,12 +9,16 @@ import { Line } from "@/components/ui/Icons";
 const services = ["Taxi VIP", "Limousine", "เช่ารถ EV", "แพ็กเกจทัวร์"];
 
 export function BookingForm() {
+  const router = useRouter();
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [lineUrl, setLineUrl] = useState<string>(site.links.line);
   const [whenMode, setWhenMode] = useState<"now" | "schedule">("now");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
     const form = e.currentTarget;
     const fd = new FormData(form);
     const g = (k: string) => (fd.get(k) ?? "").toString().trim();
@@ -34,28 +39,37 @@ export function BookingForm() {
       .filter(Boolean)
       .join("\n");
 
-    const url = site.links.lineOaMessage + encodeURIComponent(msg);
-    setLineUrl(url);
-    // [1] ส่งคำสั่งจองเข้า dashboard ระบบหลังบ้านทันที (ไม่บล็อก UX)
-    fetch("/api/book", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        service: g("service"),
-        pickup: g("pickup"),
-        dropoff: g("dropoff"),
-        date: g("date"),
-        time: g("time"),
-        passengers: g("passengers"),
-        name: g("name"),
-        phone: g("phone"),
-        note: g("note"),
-      }),
-    }).catch(() => {});
-    // [2] เก็บสำเนาเข้าอีเมลทีมงานไว้เป็นหลักฐานสำรอง
+    setLineUrl(site.links.lineOaMessage + encodeURIComponent(msg));
+    // เก็บสำเนาเข้าอีเมลทีมงานไว้เป็นหลักฐานสำรอง
     submitLead("booking", form).catch(() => {});
-    // [3] เปิด LINE OA พร้อมข้อความจอง — ต้องเรียกในจังหวะคลิกเพื่อไม่ให้โดน popup-block
-    window.open(url, "_blank", "noopener");
+
+    // ส่งคำขอเข้า dashboard → รับ token → พาไปหน้าติดตามสถานะ
+    try {
+      const r = await fetch("/api/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service: g("service"),
+          pickup: g("pickup"),
+          dropoff: g("dropoff"),
+          date: g("date"),
+          time: g("time"),
+          passengers: g("passengers"),
+          name: g("name"),
+          phone: g("phone"),
+          note: g("note"),
+        }),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (j?.ok && j.token) {
+        router.push(`/track/${j.token}`);
+        return;
+      }
+    } catch {
+      /* ระบบหลังบ้านไม่พร้อม → fallback ไป LINE */
+    }
+    // fallback: แสดงหน้ายืนยัน + ปุ่ม LINE (กรณีหลังบ้านยังไม่พร้อม)
+    setSubmitting(false);
     setSent(true);
   }
 
@@ -167,13 +181,14 @@ export function BookingForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-crimson px-8 py-4 text-base font-semibold text-white transition-colors hover:brightness-110"
+        disabled={submitting}
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-crimson px-8 py-4 text-base font-semibold text-white transition-colors hover:brightness-110 disabled:opacity-70"
       >
-        ยืนยันการจอง <Line className="h-5 w-5" />
+        {submitting ? "กำลังส่งคำขอ…" : "ยืนยันการจอง"}
       </button>
       <p className="text-center text-xs text-muted">
-        กดแล้วคำขอจองจะเข้าระบบของทีมงานทันที และเปิดแชต LINE ให้คุณยืนยัน —
-        ทีมงานจะติดต่อกลับเพื่อยืนยันราคาและเวลา
+        กดแล้วคำขอจองจะเข้าระบบทีมงานทันที และพาคุณไปยังหน้าติดตามสถานะการเรียกรถ —
+        ทีมงานจะยืนยันราคาและจัดคนขับให้
       </p>
     </form>
   );

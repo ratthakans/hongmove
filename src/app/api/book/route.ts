@@ -68,7 +68,7 @@ export async function POST(req: Request) {
     if (!r.ok) {
       return NextResponse.json({ ok: false, error: data.error ?? "backend_error" }, { status: 502 });
     }
-    return NextResponse.json({ ok: true, code: data.code });
+    return NextResponse.json({ ok: true, code: data.code, token: data.token });
   } catch {
     return NextResponse.json({ ok: false, error: "backend_unreachable" }, { status: 502 });
   }
